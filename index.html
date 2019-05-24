@@ -1,0 +1,195 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>React</title>
+
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/monokai.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h1>React JS</h1>
+				</section>
+				<section>
+					<ul>
+						<li>Components</li>
+						<li class="fragment">Adding React to project</li>
+						<li class="fragment">JSX as a "React language"</li>
+						<li class="fragment">Render</li>
+						<li class="fragment">React lifecycle</li>
+					</ul>
+				</section>
+				<section>
+					<section>
+						<h3>React components</h3>
+					</section>
+					<section>
+						<img src="images/vk.png" alt="vkPage">
+					</section>
+					<section>
+						<h3>How to create a component</h3>
+					</section>
+					<section>
+						<pre><code>
+Import React from 'react'
+
+function HelloWorld(){
+	return (
+		<div>
+			<h1>Hello world</h1>
+		</div>
+	)
+}
+						</code></pre>
+					</section>
+					<section>
+						<h3>A little bit about rendering</h3>
+					</section>
+					<section>
+						<pre><code>
+import {render} from 'react-dom'
+
+render(<HelloWorld></HelloWorld>, 'Element from HTML')
+						</code></pre>
+					</section>
+					<section>
+						<ul>
+							<li>React component</li>
+							<li class="fragment">Parent element</li>
+							<li class="fragment">Callback function</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h3>What we need to use React</h3>
+					</section>
+					<section>
+						<img src="images/dancing.jpg" alt="Dancing">
+					</section>
+					<section>
+						<h3>Babel (for easier work)</h3>
+						<img src="images/babel.png" alt="babel">
+					</section>
+					<section>
+						<h3>Webpack (for easier work)</h3>
+						<img src="images/webpack.png" alt="webpack">
+					</section>
+					<section>
+						<h3>create-react-app</h3>
+						<pre class="fragment"><code>
+npm install create-react-app
+						</code></pre>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h3>What is JSX?</h3>
+					</section>
+					<section>
+						<img src="images/JSX.png" alt="JSXCode">
+					</section>
+				</section>
+				<section>
+					<section>
+						<h3>Props</h3>
+					</section>
+					<section>
+						<pre><code>
+export default HelloWorld
+						</code></pre>
+					</section>
+					<section>
+						<pre><code>
+<HelloWorld text="HelloWorld"></HelloWorld>
+						</code></pre>
+					</section>
+					<section>
+						<pre class="fragment"><code>
+function HelloWorld(props) {
+	const text = props
+	return (
+		<div>
+			<h1>{text}</h1>
+		</div>
+	)
+}
+						</code></pre>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h3>Virtual DOM</h3>
+					</section>
+					<section>
+						<img src="images/virtualDom.png" alt="virtualDOM">
+					</section>
+				</section>
+				<section>
+					<section>
+						<h3>React lifecycle</h3>
+					</section>
+					<section>
+						<h3>Inicialization</h3>
+						<ul>
+							<li class="fragment">constructor(props)</li>
+							<li class="fragment">componentWillMount()</li>
+							<li class="fragment">render()</li>
+							<li class="fragment">componentDidMount()</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Update</h3>
+						<ul>
+							<li class="fragment">componentWillReceiveProps(nextProps)</li>
+							<li class="fragment">shouldComponentUpdate(nextProps, nextState)</li>
+							<li class="fragment">componentWillUpdate(nextProps, nextState)</li>
+							<li class="fragment">render()</li>
+							<li class="fragment">componentDidUpdate(prevProps, prevState)</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Delete</h3>
+						<ul>
+							<li class="fragment">componentWillUnmount()</li>
+						</ul>
+					</section>
+				</section>
+			</div>
+		</div>
+
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>
